@@ -1,1 +1,176 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --vt-c-black: rgba(24, 24, 24, 0.95);
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-light-pink: rgb(253, 241, 248);
+  --vt-c-pink: rgb(255, 216, 240);
+  --vt-c-hot-pink: rgb(255, 85, 207);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-hot-pink);
+    --color-sub-heading: var(--vt-c-pink);
+    --color-body: var(--vt-c-light-pink);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  color: var(--color-body);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header, main {
+  max-width: 1280px;
+  padding: 20px 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 113, 198);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(294, 100%, 61%, 0.2);
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5rem;
+  color: var(--color-sub-heading);
+}
+
+h2 {
+  font-size: 1.75rem;
+  color: var(--color-heading);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.projectCard img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  min-height: 200px;
+  height: 100%;
+}
+
+.hero {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger-lines {
+  width: 2rem;
+  height: 0.25rem;
+  background-color: #333;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    z-index: 2;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: var(--color-background-soft);
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-links.nav-active {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+  }
+}

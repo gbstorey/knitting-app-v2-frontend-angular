@@ -1,0 +1,22 @@
+.projectImg {
+  width: 75%;
+}
+
+.projectCardBottom {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.projectAttributes {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+.projectAttributes p {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
