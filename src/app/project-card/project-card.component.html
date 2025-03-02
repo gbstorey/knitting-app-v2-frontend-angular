@@ -5,29 +5,27 @@
       <p class="projectDesc">{{ project().desc }}</p>
     </div>
     <div class="projectCardBottom">
-      <div class="projectImg">
-        <img [src]="project().imgSrc" [alt]="project().imgAlt" />
-      </div>
-      <div class="projectAttributes">
-        <p>
-          Type: <span id="clothingType">{{ project().attributes.type }}</span>
-        </p>
-        <p>
-          Yarn: <span id="yarnBrand">{{ project().attributes.yarnBrand }}</span>
-        </p>
-        <p>
-          Weight: <span id="yarnWeight">{{ project().attributes.yarnWeight }}</span>
-        </p>
-        <p>
-          Colorway: <span id="yarnColor">{{ project().attributes.yarnColor }}</span>
-        </p>
-        <p>
-          Gauge: <span id="gauge">{{ project().attributes.gauge }}</span>
-        </p>
-        <p>
-          Needle Size: <span id="needleSize">{{ project().attributes.needleSize }}</span>
-        </p>
-      </div>
+        <a [routerLink]="'/details/' + project().id" routerLinkActive="active" ariaCurrentWhenActive="page"><img [src]="project().imgSrc" [alt]="project().imgAlt" /></a>
+    </div>
+    <div class="projectAttributes">
+      <p>
+        Type: <span id="clothingType">{{ project().attributes.type }}</span>
+      </p>
+      <p>
+        Yarn: <span id="yarnBrand">{{ project().attributes.yarnBrand }}</span>
+      </p>
+      <p>
+        Weight: <span id="yarnWeight">{{ project().attributes.yarnWeight }}</span>
+      </p>
+      <p>
+        Colorway: <span id="yarnColor">{{ project().attributes.yarnColor }}</span>
+      </p>
+      <p>
+        Gauge: <span id="gauge">{{ project().attributes.gauge }}</span>
+      </p>
+      <p>
+        Needle Size: <span id="needleSize">{{ project().attributes.needleSize }}</span>
+      </p>
     </div>
   </div>
 </article>

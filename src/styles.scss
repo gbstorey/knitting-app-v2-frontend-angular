@@ -34,6 +34,7 @@
 
 body {
   display: flex;
+  padding: 10px;
   justify-content: center;
   min-height: 100vh;
   color: var(--color-body);
@@ -63,20 +64,12 @@ body {
 
 header, main {
   max-width: 1280px;
-  padding: 20px 2rem;
 }
 
 a {
   text-decoration: none;
-  color: rgb(255, 113, 198);
   transition: 0.4s;
   padding: 3px;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(294, 100%, 61%, 0.2);
-  }
 }
 
 h1 {
@@ -89,28 +82,21 @@ h1 {
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1rem;
+  margin: 5px 0 5px 2.5px;
   color: var(--color-heading);
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 p {
-  font-size: 1rem;
+  font-size: 0.6rem;
 }
 
-.projectCard img {
+.w-full {
   width: 100%;
-  object-fit: cover;
-  object-position: center;
-  min-height: 200px;
-  height: 100%;
-}
-
-.hero {
-  border-bottom: 1px solid var(--color-border);
 }
 
 .nav-container {

@@ -1,5 +1,5 @@
-<header class="hero">
-  <div>
+<header>
+  <div class="hero">
     <nav class="nav-container">
       <!-- Hamburger Button -->
       <h1>PRLY</h1>
@@ -16,13 +16,7 @@
       </div>
     </nav>
   </div>
-  <h2>knitting, made seamless</h2>
 </header>
 <main>
-  <h2>Your Projects</h2>
-  @for (project of projects(); track project.id) {
-    <app-project-card [project]="project" />
-  }
+  <router-outlet />
 </main>
-
-<router-outlet />

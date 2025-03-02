@@ -1,0 +1,4 @@
+<h2>Your Projects</h2>
+@for (project of projects; track project.id) {
+    <app-project-card [project]="project" />
+}
